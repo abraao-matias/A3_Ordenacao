@@ -2,18 +2,15 @@ package ED_AtvA3;
 
 import java.util.Random;
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 class Main {
     private static int[] GerarVetor(int tamanho) {
         int[] vetor = new int[tamanho];
         Random aleatorio = new Random();
-        Scanner sc = new Scanner(System.in);
-
+//      adiciona um valor aleatorio entre 0-9 no index do array
         for (int i=0;i<tamanho;i++) {
-            vetor[i] = sc.nextInt();
-            //possibilita adicionar valores aleatorios de 0-9 no vetor
-            // vetor[i] = aleatorio.nextInt(10);
+             vetor[i] = aleatorio.nextInt(10);
         }
 
         return vetor;
@@ -26,7 +23,8 @@ class Main {
     }
     public static void main(String[] args) {
         int vetor[] = GerarVetor(8);
-        System.out.println("Vetor ordenado:");
+        System.out.println("Vetor gerado aleatóriamente:\n "+ Arrays.toString(vetor));
+        System.out.println("\nVetor ordenado em InsertionSort:");
         ImprimirVetor(InsertionSort.insertionSort(vetor));
 
     }
